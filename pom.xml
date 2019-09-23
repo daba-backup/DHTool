@@ -5,7 +5,7 @@
 
 	<groupId>com.github.dabasan</groupId>
 	<artifactId>dhtool</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 
 	<name>DHTool</name>
 	<description>Fundamental tools for my Java programs</description>
