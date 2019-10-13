@@ -1,7 +1,7 @@
 package com.daxie.tool;
 
 /**
- * Offers methods to handle strings.
+ * Methods to handle strings.
  * @author Daba
  *
  */
