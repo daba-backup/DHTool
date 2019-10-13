@@ -13,8 +13,8 @@ public class FilenameFunctions {
 	 */
 	public static String ReplaceWindowsDelimiterWithLinuxDelimiter(String filename) {
 		String ret=filename;
+		ret=ret.replace('\\', '/');
 		
-		ret.replace('\\', '/');
 		return ret;
 	}
 	/**
