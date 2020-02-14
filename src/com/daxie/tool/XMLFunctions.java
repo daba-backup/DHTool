@@ -11,7 +11,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 
-import com.daxie.log.LogWriter;
+import com.daxie.log.LogFile;
 
 /**
  * Methods to handle XML.
@@ -34,8 +34,8 @@ public class XMLFunctions {
 		catch(TransformerConfigurationException e) {
 			String str=ExceptionFunctions.GetPrintStackTraceString(e);
 			
-			LogWriter.WriteWarn("[XMLFunctions-WriteXML] Below is the stack trace.",true);
-			LogWriter.WriteWarn(str,false);
+			LogFile.WriteWarn("[XMLFunctions-WriteXML] Below is the stack trace.",true);
+			LogFile.WriteWarn(str,false);
 			
 			return -1;
 		}
@@ -49,8 +49,8 @@ public class XMLFunctions {
 		catch(TransformerException e) {
 			String str=ExceptionFunctions.GetPrintStackTraceString(e);
 			
-			LogWriter.WriteWarn("[XMLFunctions-WriteXML] Below is the stack trace.",true);
-			LogWriter.WriteWarn(str,false);
+			LogFile.WriteWarn("[XMLFunctions-WriteXML] Below is the stack trace.",true);
+			LogFile.WriteWarn(str,false);
 			
 			return -1;
 		}
