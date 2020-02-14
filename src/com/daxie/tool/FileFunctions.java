@@ -106,7 +106,7 @@ public class FileFunctions {
 	 * @param os Stream
 	 * @param encoding Encoding
 	 * @param lines Lines to write in the file
-	 * @exception IOException
+	 * @throws IOException
 	 */
 	public static void CreateTextFile(OutputStream os,String encoding,List<String> lines) throws IOException{
 		try(BufferedWriter br=new BufferedWriter(new OutputStreamWriter(os,encoding))) {
@@ -123,7 +123,7 @@ public class FileFunctions {
 	 * @param filename Filename
 	 * @param encoding Encoding
 	 * @param lines Lines to write in the file
-	 * @exception IOException
+	 * @throws IOException
 	 */
 	public static void CreateTextFile(String filename,String encoding,List<String> lines) throws IOException{
 		try(FileOutputStream fos=new FileOutputStream(filename)){
@@ -134,7 +134,7 @@ public class FileFunctions {
 	 * Creates a binary file.
 	 * @param os Stream
 	 * @param bin A list of bytes
-	 * @exception IOException
+	 * @throws IOException
 	 */
 	public static void CreateBinFile(OutputStream os,List<Byte> bin) throws IOException{
 		try(BufferedOutputStream bos=new BufferedOutputStream(os)){
@@ -147,7 +147,7 @@ public class FileFunctions {
 	 * Creates a binary file.
 	 * @param filename Filename
 	 * @param bin A list of bytes
-	 * @exception IOException
+	 * @throws IOException
 	 */
 	public static void CreateBinFile(String filename,List<Byte> bin) throws IOException{
 		try(FileOutputStream fos=new FileOutputStream(filename)){
