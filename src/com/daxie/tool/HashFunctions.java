@@ -1,6 +1,6 @@
 package com.daxie.tool;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -65,10 +65,10 @@ public class HashFunctions {
 	 * @param filename Filename
 	 * @param algorithm Algorithm
 	 * @return Hash value
-	 * @throws FileNotFoundException Specified file not found
-	 * @throws NoSuchAlgorithmException Specified algorithm not found
+	 * @throws IOException
+	 * @throws NoSuchAlgorithmException
 	 */
-	public static String GetFileHash(String filename,String algorithm) throws FileNotFoundException,NoSuchAlgorithmException{
+	public static String GetFileHash(String filename,String algorithm) throws IOException,NoSuchAlgorithmException{
 		List<Byte> bin=FileFunctions.GetFileAllBin(filename);
 		String hash=HashFunctions.GetHash(bin, algorithm);
 		
