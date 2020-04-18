@@ -9,9 +9,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-
-import com.daxie.log.LogWriter;
 
 /**
  * Methods to handle XML.
@@ -19,6 +19,8 @@ import com.daxie.log.LogWriter;
  *
  */
 public class XMLFunctions {
+	private static Logger logger=LoggerFactory.getLogger(XMLFunctions.class);
+	
 	/**
 	 * Creates a XML file.
 	 * @param file File
@@ -32,11 +34,7 @@ public class XMLFunctions {
 			transformer=factory.newTransformer();
 		}
 		catch(TransformerConfigurationException e) {
-			String str=ExceptionFunctions.GetPrintStackTraceString(e);
-			
-			LogWriter.WriteWarn("[XMLFunctions-WriteXML] Below is the stack trace.",true);
-			LogWriter.WriteWarn(str,false);
-			
+			logger.error("Error during configuration for XML output.",e);
 			return -1;
 		}
 		
@@ -47,11 +45,7 @@ public class XMLFunctions {
 			transformer.transform(new DOMSource(document), new StreamResult(file));
 		}
 		catch(TransformerException e) {
-			String str=ExceptionFunctions.GetPrintStackTraceString(e);
-			
-			LogWriter.WriteWarn("[XMLFunctions-WriteXML] Below is the stack trace.",true);
-			LogWriter.WriteWarn(str,false);
-			
+			logger.error("Error while writing.",e);
 			return -1;
 		}
 		
