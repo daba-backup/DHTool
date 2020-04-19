@@ -305,12 +305,50 @@ public class ByteFunctions {
 		short ret=ByteFunctions.byte_to_short_le(buffer);
 		return ret;
 	}
-	public static int GetUShortFromBin_LE(List<Byte> bin,int pos) {
+	public static int GetUShortValueFromBin_LE(List<Byte> bin,int pos) {
 		byte[] buffer=new byte[2];
 		buffer[0]=bin.get(pos);
 		buffer[1]=bin.get(pos+1);
 		
 		int ret=ByteFunctions.byte_to_ushort_le(buffer);
 		return ret;
+	}
+	
+	public static void AddFloatValueToBin_LE(List<Byte> bin,float value) {
+		byte[] buffer=ByteFunctions.float_to_byte_le(value);
+		for(int i=0;i<4;i++) {
+			bin.add(buffer[i]);
+		}
+	}
+	public static void AddShortValueToBin_LE(List<Byte> bin,short value) {
+		byte[] buffer=ByteFunctions.short_to_byte_le(value);
+		for(int i=0;i<2;i++) {
+			bin.add(buffer[i]);
+		}
+	}
+	public static void AddUShortValueToBin_LE(List<Byte> bin,int value) {
+		byte[] buffer=ByteFunctions.ushort_to_byte_le(value);
+		for(int i=0;i<2;i++) {
+			bin.add(buffer[i]);
+		}
+	}
+	
+	public static void SetFloatValueToBin_LE(List<Byte> bin,int pos,float value) {
+		byte[] buffer=ByteFunctions.float_to_byte_le(value);
+		for(int i=0;i<4;i++) {
+			bin.set(pos,buffer[i]);
+		}
+	}
+	public static void SetShortValueToBin_LE(List<Byte> bin,int pos,short value) {
+		byte[] buffer=ByteFunctions.short_to_byte_le(value);
+		for(int i=0;i<2;i++) {
+			bin.set(pos,buffer[i]);
+		}
+	}
+	public static void SetUShortValueToBin_LE(List<Byte> bin,int pos,int value) {
+		byte[] buffer=ByteFunctions.ushort_to_byte_le(value);
+		for(int i=0;i<2;i++) {
+			bin.set(pos,buffer[i]);
+		}
 	}
 }
