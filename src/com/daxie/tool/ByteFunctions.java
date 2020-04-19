@@ -1,6 +1,7 @@
 package com.daxie.tool;
 
 import java.nio.ByteBuffer;
+import java.util.List;
 
 /**
  * Methods to handle binary representation.
@@ -284,5 +285,32 @@ public class ByteFunctions {
 		b[0]=(byte)s;
 		
 		return b;
+	}
+	
+	public static float GetFloatValueFromBin_LE(List<Byte> bin,int pos) {
+		byte[] buffer=new byte[4];
+		buffer[0]=bin.get(pos);
+		buffer[1]=bin.get(pos+1);
+		buffer[2]=bin.get(pos+2);
+		buffer[3]=bin.get(pos+3);
+		
+		float ret=ByteFunctions.byte_to_float_le(buffer);
+		return ret;
+	}
+	public static short GetShortValueFromBin_LE(List<Byte> bin,int pos) {
+		byte[] buffer=new byte[2];
+		buffer[0]=bin.get(pos);
+		buffer[1]=bin.get(pos+1);
+		
+		short ret=ByteFunctions.byte_to_short_le(buffer);
+		return ret;
+	}
+	public static int GetUShortFromBin_LE(List<Byte> bin,int pos) {
+		byte[] buffer=new byte[2];
+		buffer[0]=bin.get(pos);
+		buffer[1]=bin.get(pos+1);
+		
+		int ret=ByteFunctions.byte_to_ushort_le(buffer);
+		return ret;
 	}
 }
