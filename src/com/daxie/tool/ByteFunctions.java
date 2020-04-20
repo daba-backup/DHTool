@@ -336,19 +336,19 @@ public class ByteFunctions {
 	public static void SetFloatValueToBin_LE(List<Byte> bin,int pos,float value) {
 		byte[] buffer=ByteFunctions.float_to_byte_le(value);
 		for(int i=0;i<4;i++) {
-			bin.set(pos,buffer[i]);
+			bin.set(pos+i,buffer[i]);
 		}
 	}
 	public static void SetShortValueToBin_LE(List<Byte> bin,int pos,short value) {
 		byte[] buffer=ByteFunctions.short_to_byte_le(value);
 		for(int i=0;i<2;i++) {
-			bin.set(pos,buffer[i]);
+			bin.set(pos+i,buffer[i]);
 		}
 	}
 	public static void SetUShortValueToBin_LE(List<Byte> bin,int pos,int value) {
 		byte[] buffer=ByteFunctions.ushort_to_byte_le(value);
 		for(int i=0;i<2;i++) {
-			bin.set(pos,buffer[i]);
+			bin.set(pos+i,buffer[i]);
 		}
 	}
 }
