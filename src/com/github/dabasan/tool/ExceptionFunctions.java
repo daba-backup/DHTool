@@ -1,4 +1,4 @@
-package com.daxie.tool;
+package com.github.dabasan.tool;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

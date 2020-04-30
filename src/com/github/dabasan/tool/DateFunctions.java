@@ -1,4 +1,4 @@
-package com.daxie.tool;
+package com.github.dabasan.tool;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
